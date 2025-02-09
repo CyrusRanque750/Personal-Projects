@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* nav {
+    position: fixed;      
+    top: 0;                
+    width: 100%;         
+    z-index: 1000; 
+} */
+/* / Bread after nimo ma himo ang nav kay e uncomment lang ni para ma automatic na siya position sa babaw*/
+
+body {
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+svg {
+    position: fixed; 
+    top: 0;  /*top: 45px; adjust if need aron di ma tabonan ang above part sa svg wave bread*/          
+    left: 0;              
+    width: 100%;           
+    z-index: -1;           
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(52, 152, 219, 0.5);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.child-container, .employee-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+
+}
+.child-container {
+    flex-basis: 30%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  
+}
+
+.info-container h3 {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.info-container p {
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.employee-container {
+    overflow-x: auto;
+}
+
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0; 
+    border-radius: 5px;
+    overflow-x: hidden;
+}
+
+
+h4, h3, p {
+    text-align: center;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+.button-yes {
+    margin: auto;
+    width: 50px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0099ff;
+    color: white;
+}
+
+.button-no {
+    margin: auto;
+    width: 50px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff407d;
+    color: white;
+}
+
+.button-yes:hover {
+    background-color: #067394;
+}
+
+.button-no:hover {
+    background-color: #b90861
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .employee-container {
+        flex-basis: 100%;
+    }
+
+    h4, p {
+        font-size: 16px; 
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .button-yes, .button-no {
+        width: 40px; 
+    }
+}

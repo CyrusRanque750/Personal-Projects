@@ -1,0 +1,73 @@
+Database Name = waterstation
+
+tb_upload;
+    CREATE TABLE tb_upload (
+        id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        name VARCHAR(50) NOT NULL,
+        image VARCHAR(100) NOT NULL,
+        info VARCHAR(255) NOT NULL,
+        status VARCHAR(50) NOT NULL
+    );
+
+ShopInfo;
+   CREATE TABLE shopinfo (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    profilePic VARCHAR(100) NOT NULL,
+    permit VARCHAR(100) NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    contact VARCHAR(15) NOT NULL,  -- Changed to VARCHAR for flexibility
+    price DECIMAL(10, 2) NOT NULL,  -- Changed to DECIMAL for currency
+    discount DECIMAL(10, 2) NOT NULL,  -- Changed to DECIMAL for currency
+    deliveryFee DECIMAL(10, 2) NOT NULL,  -- Corrected the column name
+    info VARCHAR(255) NOT NULL
+    status enum('pending','approved','rejected') NULL DEFAULT pending,
+    notification VARCHAR(255) DEFAULT NULL,
+    seller_id INT(11) NOT NULL
+);
+    Seller;
+    CREATE TABLE seller(
+        id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        username VARCHAR(50) NOT NULL,
+        email VARCHAR(50) NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        confirmPassword VARCHAR(255) NOT NULL
+    );
+
+Buyer;
+    CREATE buyer (
+        id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        username VARCHAR(50) NOT NULL,
+        email VARCHAR(50) NOT NULL,
+        password VARCHAR(50) NOT NULL,
+        confirmPassword VARCHAR(255) NOT NULL
+    );    
+
+Orders;
+    CREATE TABLE orders (   
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    buyer_id INT(11) NOT NULL,
+    seller_id INT(11) NOT NULL,
+    shop_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    contact VARCHAR(50),
+    info TEXT,
+    profilePic VARCHAR(255),
+    amount BIGINT NOT NULL,  -- Use BIGINT without size in parentheses
+    total DECIMAL(10, 2) NULL,
+    method VARCHAR(10) NULL,  -- Fixed typo from VARCHER to VARCHAR
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    discount INT(11) NOT NULL
+);
+
+CREATE TABLE profileSeller (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL DEFAULT 'N/A',
+    email VARCHAR(255) NOT NULL DEFAULT 'N/A',
+    contact VARCHAR(255) NOT NULL DEFAULT 'N/A',
+    address VARCHAR(255) NOT NULL DEFAULT 'N/A'
+    
+);
+
+

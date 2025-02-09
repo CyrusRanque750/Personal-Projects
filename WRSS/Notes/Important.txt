@@ -1,0 +1,7 @@
+/*// Start session to retrieve the logged-in seller's ID
+session_start();
+if (!isset($_SESSION['seller_id'])) {
+    // Redirect to login page if not logged in
+    header("Location: SellerDashboard.php");
+    exit();
+}*/
